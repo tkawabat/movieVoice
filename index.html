@@ -1,28 +1,90 @@
 <!doctype html>
 <html lang="ja" ng-app="movieVoice">
 <head>
-<title>Self Camera</title>
+<title>アテレコ！</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"  rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-<div>
-    <video id="movie" class="video-js vjs-default-skin"
-        controls preload="auto" width="640px" height="480px"
-        poster="img/poster.png"
-    >
-        <source src="movie/beMan.webm" />
-        <p class="vjs-no-js">please enable JavaScript</p>
-    </video>
-</div>
+    <h1>アテレコ！</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 mb-20">
+                <div class="movie">
+                    <video id="movie" class="video-js vjs-default-skin"
+                           controls preload="auto" width="480px" height="320px"
+                           poster="img/poster.png"
+                           >
+                        <source src="movie/beMan.webm" />
+                        <p class="vjs-no-js">please enable JavaScript</p>
+                    </video>
+                </div>
+            </div>
+            <div class="col-sm-4 explain">
+0:03～<br>
+部長：今年の新入部員は男のくせに軟弱だ<br>
+<br>
+0:09～<br>
+部長：私が部長の冴島だ<br>
+　　　ビジバシ鍛えてやるから覚悟しろ<br>
+新入：は…はい…<br>
+<br>
+0:15～<br>
+部長：「はい」でも「いいえ」でも<br>
+　　　ここでの返事は押忍だ！！<br>
+新入：お…おすっ！！<br>
+<br>
+0:23～<br>
+部長：…かわいいな<br>
+<br>
+部長：相馬<br>
+　　　お前みたいな奴がなんで空手部に来た？<br>
+新入：お、おす！！<br>
+　　　男らしくなりたいからです。<br>
+<br>
+部長：ならなよなよするな！！<br>
+　　　気合を入れろ！！<br>
+新入：お、おす！！<br>
+<br>
+新入：おすっ！！<br>
+　　　おすっ！！<br>
+<br>
+部長：…くそっ！！
+            </div>
+        </div>
 
-<div ng-controller="recorderController as app">
-    <button ng-click="app.toggleRecord()" ng-model="recordStatus" ng-disabled="app.isRecordButtonDisable()">{{app.recordMessage()}}</button>
-    <button ng-click="app.togglePlay()" ng-model="playStatus" ng-disabled="app.isPlayButtonDisable()">{{app.playMessage()}}</button>
-    <audio id="recordedVoice"></audio>
-</div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="recorderController" ng-controller="recorderController as app">
+                    <button ng-click="app.toggleRecord()" ng-model="recordStatus" ng-disabled="app.isRecordButtonDisable()">{{app.recordMessage()}}</button>
+                    <button ng-click="app.togglePlay()" ng-model="playStatus" ng-disabled="app.isPlayButtonDisable()">{{app.playMessage()}}</button>
+                    <audio id="recordedVoice"></audio>
+                </div>
+                <div>
+                    <h4>キャラ選択 (今は部長固定です)</h4>
+                    相馬（新入生）<input type="radio" name="charactor" value="hoge" disabled>
+                    冴島（部長）<input type="radio" name="charactor" value="fuga" checked>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div>
+                    <h4>遊び方</h4>
+                    <ol>
+                    <li>recordボタンを押す</li>
+                    <li>動画のタイミングに合わせて喋る</li>
+                    <li>終わったらstopボタンを押す</li>
+                    <li>playを押す</li>
+                    <li>あなたの声が乗って動画が流れる！</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <script>var NS = {};</script>
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 <script src="//vjs.zencdn.net/4.12/video.js"></script>
 <script src="js/Recorder.js"></script>

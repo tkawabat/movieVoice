@@ -1,0 +1,25 @@
+.fr { 
+    float: right;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.movie {
+}
+
+.explain {
+    height: 320px;
+    overflow-y:scroll;
+}
+
+.recorderController button {
+    width: 64px;
+    height: 32px;
+    size: 16px;
+}
