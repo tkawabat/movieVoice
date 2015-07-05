@@ -28,6 +28,10 @@ Player.prototype.adaptEnv = function(id) {
 
 Player.prototype.setMovie = function(id) {
     var that = this
+    , activate = function() {
+        that.movie.reportUserActivity();
+        setTimeout(activate, 2000);
+    }
     ;
 
     videojs(id, {}, function(){
@@ -38,6 +42,8 @@ Player.prototype.setMovie = function(id) {
                 audio.currentTime = time;
             }
         });
+        
+        activate();
     });
 }
 
