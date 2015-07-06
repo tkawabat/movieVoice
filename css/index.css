@@ -10,16 +10,23 @@
     margin-bottom: 20px;
 }
 
-.movie {
+.mr-20 {
+    margin-right: 20px;
 }
 
 .explain {
     height: 320px;
     overflow-y:scroll;
+    border: 1px solid;
 }
 
 .recorderController button {
     width: 64px;
     height: 32px;
     size: 16px;
+}
+
+address {
+    margin-top: 100px;
+    text-align: right;
 }

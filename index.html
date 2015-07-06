@@ -11,19 +11,17 @@
 <body>
     <h1>アテレコ！</h1>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-8 mb-20">
-                <div class="movie">
-                    <video id="movie" class="video-js vjs-default-skin"
-                           controls preload="auto" width="480px" height="320px"
-                           poster="img/poster.png"
-                           >
-                        <source src="movie/beMan.webm" />
-                        <p class="vjs-no-js">please enable JavaScript</p>
-                    </video>
-                </div>
+        <div class="row mb-20">
+            <div class="col-sm-6">
+                <video id="movie" class="video-js vjs-default-skin"
+                       controls preload="auto" width="480px" height="320px"
+                       poster="img/poster.png"
+                       >
+                    <source src="movie/beMan.webm" />
+                    <p class="vjs-no-js">please enable JavaScript</p>
+                </video>
             </div>
-            <div class="col-sm-4 explain">
+            <div class="col-sm-4 col-sm-offset-1 explain">
 0:03～<br>
 部長：今年の新入部員は<br>
 　　　男のくせに軟弱だ<br>
@@ -97,6 +95,10 @@
             </div>
         </div>
     </div>
+    <address>
+        <p class="mr-20">感想・要望などはこちら</p>
+        <a href="https://twitter.com/intent/tweet?screen_name=tunehigoro5" class="twitter-mention-button" data-related="tunehigoro5">Tweet to @tunehigoro5</a>
+    </address>
 
 <script>var NS = {};</script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
@@ -165,5 +167,6 @@
   ga('send', 'pageview');
 
 </script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
 </html>
