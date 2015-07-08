@@ -38,9 +38,7 @@ Player.prototype.setMovie = function(id) {
         that.movie = this;
         that.movie.on('seeked', function() {
             var time = that.movie.currentTime();
-            if (!that.audio) {
-                audio.currentTime = time;
-            }
+            this.seek(time);
         });
         
         activate();
