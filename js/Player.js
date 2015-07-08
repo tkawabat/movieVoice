@@ -78,13 +78,23 @@ Player.prototype.pause = function() {
 
 Player.prototype.seek = function(time) {
     var len = this.audio.length
-      , i
-      ;
+        , i
+        ;
 
     this.movie.currentTime(time);
+
+    // firefoxがplayして時間を置いてから出ないとcurrentTimeがいじれない
+    // setTimeoutでタイミングずらし
     for (i = 0; i < len; i++) {
-        this.audio[i].currentTime = time;
+        this.audio[i].play();
+        this.audio[i].pause();
     }
+
+    setTimeout(function() {
+        for (i = 0; i < len; i++) {
+            this.audio[i].currentTime = time;                
+        }
+    }, 0);
 }
 
 NS.Player = Player;
